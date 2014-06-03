@@ -28,21 +28,12 @@ ADD ontowiki.conf /etc/nginx/sites-available/
 RUN rm /etc/nginx/sites-enabled/default
 RUN ln -s /etc/nginx/sites-available/ontowiki.conf /etc/nginx/sites-enabled/
 
-# configure virtuoso
+# configure odbc for virtuoso
 ADD odbc.ini /etc/
+
+# Add startscript and start
 ADD start.sh /start.sh
-
-# start the virtuoso service
-# virtuoso-t
-#RUN service virtuoso-opensource-6.1 start
-#CMD ["service", "virtuoso-opensource-6.1", "start"]
-# start the php5-fpm service
-#RUN service php5-fpm start
-#CMD ["service", "php5-fpm", "start"]
-# start the nginx service
-#CMD ["service", "nginx", "start"]
-#RUN service nginx start
-
+ADD ow-docker.fig /ow-docker.fig
 CMD ["/bin/bash", "/start.sh"]
 
 # expose the HTTP port to the outer world
