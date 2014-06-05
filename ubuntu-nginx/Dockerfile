@@ -10,13 +10,12 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/
 RUN apt-get update
 
 # install some basic packages
-RUN apt-get install -y git make curl
-
 # install the nginx server with PHP
-RUN apt-get install -y nginx-light php5-fpm php5-odbc php5-curl
-
 # install virtuoso
-RUN apt-get install -y virtuoso-opensource
+RUN apt-get install -y \
+    git make curl \
+    nginx-light php5-fpm php5-odbc php5-curl \
+    virtuoso-opensource
 
 # clone ontowiki and get its dependencies
 RUN git clone https://github.com/AKSW/OntoWiki.git /var/www/
