@@ -20,4 +20,3 @@ echo "following log:"
 OWLOG="/var/www/logs/ontowiki.log"
 touch $OWLOG
 chmod a+w $OWLOG
-tail -f $OWLOG
