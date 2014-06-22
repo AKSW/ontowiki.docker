@@ -33,6 +33,7 @@ ADD odbc.ini /etc/
 # Add startscript and start
 ADD start.sh /start.sh
 ADD ow-docker.fig /ow-docker.fig
+RUN chmod 777 /start.sh
 CMD ["/bin/bash", "/start.sh"]
 
 # expose the HTTP port to the outer world
