@@ -1,11 +1,13 @@
 create with
 
-    docker.io build -t ontowiki .
+    docker build -t ontowiki .
 
 run with
 
-    docker.io run -t -i -p 8080:80 ontowiki
+    docker run -t -i -p 8080:80 ontowiki
 
 or
 
-    docker.io run -p 8080:80 ontowiki
+    docker run -b -p 8080:80 ontowiki
+
+Run as a user, which is in the docker group or with `sudo`.
