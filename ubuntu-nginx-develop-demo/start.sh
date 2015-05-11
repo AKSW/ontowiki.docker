@@ -6,6 +6,8 @@ git fetch
 git checkout develop
 git pull
 make deploy
+cp config.ini.dist config.ini
+sed -i 's/;debug = true/debug = true/' config.ini
 
 # start the virtuoso service
 echo "starting virtuoso …"
