@@ -14,7 +14,7 @@ RUN apt-get update
 # install virtuoso
 RUN apt-get install -y \
     git make curl \
-    nginx-light php5-fpm php5-odbc php5-curl \
+    nginx-light php5-fpm php5-cli php5-odbc php5-curl \
     virtuoso-opensource
 
 # clone ontowiki and get its dependencies
